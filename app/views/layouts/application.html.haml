@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title Sample Site
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    = render 'layouts/header'
+    -if flash[:notice] 
+      .div.alert_area
+        .flash
+          =flash[:notice]
+    .container
+      = yield
+    .content
+      = render 'layouts/footer'
