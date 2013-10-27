@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :authorized?, except: [:new, :create, :show]
+  before_filter :authorized?, except: [:new, :create, :show, :edit]
   
   # GET /users
   # GET /users.json
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
