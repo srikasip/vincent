@@ -21,7 +21,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
 
   # POST /users
   # POST /users.json
@@ -47,6 +49,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
