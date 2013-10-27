@@ -1,0 +1,20 @@
+.hero.signin_hero
+  .container
+    %h2 
+      Login to |
+      %span
+        Simple app with users |
+    .container
+      =form_tag sessions_path do
+        .field
+          =label_tag :name
+          =text_field_tag :name, params[:name], class: 'text_field'
+        .field
+          =label_tag :password
+          =password_field_tag :password, '', class: 'text_field'
+        .actions
+          =submit_tag 'Log in', class: 'submitbutton'
+        %br
+        %p
+          Not a member yet?
+          =link_to 'Sign up!', new_user_path
