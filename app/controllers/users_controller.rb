@@ -30,6 +30,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @adminUser = User.find(User.minimum(:id))
+        @adminUser.is_admin = true
+        @adminUser.save();
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
