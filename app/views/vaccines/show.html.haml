@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @vaccine.name
+%p
+  %b Due range:
+  = @vaccine.due_range
+
+= link_to 'Edit', edit_vaccine_path(@vaccine)
+\|
+= link_to 'Back', vaccines_path

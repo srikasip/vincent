@@ -1,0 +1,21 @@
+%h1 Listing patient_vaccines
+
+%table
+  %tr
+    %th Patient
+    %th Vaccine
+    %th
+    %th
+    %th
+
+  - @patient_vaccines.each do |patient_vaccine|
+    %tr
+      %td= patient_vaccine.patient_id
+      %td= patient_vaccine.vaccine_id
+      %td= link_to 'Show', patient_vaccine
+      %td= link_to 'Edit', edit_patient_vaccine_path(patient_vaccine)
+      %td= link_to 'Destroy', patient_vaccine, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Patient vaccine', new_patient_vaccine_path

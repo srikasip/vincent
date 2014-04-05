@@ -1,0 +1,21 @@
+%h1 Listing vaccines
+
+%table
+  %tr
+    %th Name
+    %th Due range
+    %th
+    %th
+    %th
+
+  - @vaccines.each do |vaccine|
+    %tr
+      %td= vaccine.name
+      %td= vaccine.due_range
+      %td= link_to 'Show', vaccine
+      %td= link_to 'Edit', edit_vaccine_path(vaccine)
+      %td= link_to 'Destroy', vaccine, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vaccine', new_vaccine_path

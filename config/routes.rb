@@ -1,4 +1,12 @@
 Samplesite1::Application.routes.draw do
+  resources :patient_vaccines
+
+  resources :vaccines
+
+  resources :patients
+
+  resources :villages
+
   resources :users
 
   get "static_pages/home"

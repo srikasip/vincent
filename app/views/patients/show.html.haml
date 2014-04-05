@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @patient.name
+%p
+  %b Bracelet:
+  = @patient.bracelet_id
+%p
+  %b Dob:
+  = @patient.dob
+%p
+  %b Village:
+  = @patient.village_id
+%p
+  %b Mobile:
+  = @patient.mobile
+
+= link_to 'Edit', edit_patient_path(@patient)
+\|
+= link_to 'Back', patients_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Patient:
+  = @patient_vaccine.patient_id
+%p
+  %b Vaccine:
+  = @patient_vaccine.vaccine_id
+
+= link_to 'Edit', edit_patient_vaccine_path(@patient_vaccine)
+\|
+= link_to 'Back', patient_vaccines_path
