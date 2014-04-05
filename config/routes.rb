@@ -16,6 +16,10 @@ Samplesite1::Application.routes.draw do
   resources :sessions
   get "sessions/new", :as => :login
 
+  get "mobile_services/get_villages"
+  get "mobile_services/village_data"
+  get "mobile_services/village_patients"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
